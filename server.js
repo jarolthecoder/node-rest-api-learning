@@ -1,11 +1,11 @@
 require("dotenv").config();
 
 const http = require("node:http");
-const { productRoutes } = require("./routes/productsRoutes");
+const { productsRoutes } = require("./routes/productsRoutes");
 
 const server = http.createServer((req, res) => {
   // API Routes
-  productRoutes(req, res);
+  productsRoutes(req, res);
 });
 
 const PORT = process.env.PORT || 5000;

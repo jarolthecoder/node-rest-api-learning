@@ -8,7 +8,7 @@ const {
 const { sendResponse } = require("../utils");
 
 // Handles the routing for product-related API endpoints.
-const productRoutes = (req, res) => {
+const productsRoutes = (req, res) => {
   const url = req.url;
   const method = req.method;
   const apiRegex = /\/api\/products\/([0-9]+)/; // Regex to match /api/products/:id

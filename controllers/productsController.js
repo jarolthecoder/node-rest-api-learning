@@ -1,10 +1,4 @@
-const {
-  findAll,
-  findById,
-  create,
-  update,
-  remove,
-} = require("../models/productModel");
+const Product = require("../models/productModel");
 const { sendResponse, getPostData } = require("../utils");
 
 /**
@@ -13,7 +7,7 @@ const { sendResponse, getPostData } = require("../utils");
  */
 const getProducts = async (req, res) => {
   try {
-    const products = await findAll();
+    const products = await Product.findAll();
     sendResponse(res, 200, products);
   } catch (error) {
     sendResponse(res, 500, { message: "Internal server error" });
@@ -26,7 +20,7 @@ const getProducts = async (req, res) => {
  */
 const getProduct = async (req, res, id) => {
   try {
-    const product = await findById(id);
+    const product = await Product.findById(id);
 
     if (!product) {
       sendResponse(res, 404, { message: "Product Not Found." });
@@ -45,7 +39,7 @@ const getProduct = async (req, res, id) => {
 const createProduct = async (req, res) => {
   try {
     const data = await getPostData(req);
-    const product = await create(JSON.parse(data));
+    const product = await Product.create(JSON.parse(data));
 
     sendResponse(res, 201, product);
   } catch (error) {
@@ -60,7 +54,7 @@ const createProduct = async (req, res) => {
 const updateProduct = async (req, res, id) => {
   try {
     const data = await getPostData(req);
-    const product = await update(id, JSON.parse(data));
+    const product = await Product.update(id, JSON.parse(data));
 
     sendResponse(res, 200, product);
   } catch (error) {
@@ -74,7 +68,7 @@ const updateProduct = async (req, res, id) => {
  */
 const deleteProduct = async (req, res, id) => {
   try {
-    await remove(id);
+    await Product.remove(id);
     sendResponse(res, 200, { message: "Product deleted successfully!" });
   } catch (error) {
     sendResponse(500, { message: "Internal server error" });

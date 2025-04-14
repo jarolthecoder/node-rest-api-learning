@@ -34,11 +34,5 @@
     "name": "Xbox Series X Black",
     "description": "Power meets speed with the Xbox Series X. Enjoy 4K gaming, ultra-fast load times, and next-gen performance in a sleek, compact design.",
     "price": 499.99
-  },
-  {
-    "id": 7,
-    "name": "Samsung Oled G9 49-Inch 144Hz Curved Gaming Monitor",
-    "description": "Super ultra-wide 49-inch screen with 32:9 aspect ratio. Quantum Dot technology and HDR support deliver stunning visuals for an immersive gaming experience.",
-    "price": 1299.99
   }
 ]

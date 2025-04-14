@@ -32,5 +32,5 @@ const productsRoutes = (req, res) => {
 };
 
 module.exports = {
-  productRoutes,
+  productsRoutes,
 };
